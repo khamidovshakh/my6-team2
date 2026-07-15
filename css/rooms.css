@@ -1,0 +1,184 @@
+/* ===== Общие стили ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #333;
+  background-color: #faf7f2;
+  line-height: 1.6;
+}
+
+/* ===== Шапка ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #1f3b4d;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav a {
+  color: #cfd8dc;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #e8b84b;
+}
+
+/* ===== Заголовок ===== */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #1f3b4d, #2e5a75);
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #cfd8dc;
+}
+
+/* ===== Карточки номеров ===== */
+.rooms {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.room-card {
+  display: flex;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  /* появление при прокрутке (управляется из JS) */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.room-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.room-card img {
+  width: 320px;
+  object-fit: cover;
+  background-color: #dfe6e9; /* фон, пока нет картинки */
+}
+
+.room-info {
+  padding: 25px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.room-info h2 {
+  color: #1f3b4d;
+  margin-bottom: 8px;
+}
+
+.room-info ul {
+  list-style: none;
+  margin: 15px 0;
+}
+
+.room-info li {
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.room-bottom {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1f3b4d;
+}
+
+.book-btn {
+  padding: 10px 24px;
+  background-color: #e8b84b;
+  color: #1f3b4d;
+  font-weight: bold;
+  font-size: 15px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Подвал ===== */
+.footer {
+  text-align: center;
+  padding: 25px;
+  background-color: #162a38;
+  color: #90a4ae;
+  font-size: 14px;
+}
+
+/* ===== Мобильная версия ===== */
+@media (max-width: 700px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .nav a {
+    margin: 0 10px;
+  }
+
+  .room-card {
+    flex-direction: column;
+  }
+
+  .room-card img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+}

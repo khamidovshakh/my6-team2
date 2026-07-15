@@ -1,0 +1,194 @@
+/* ===== Общие стили ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #333;
+  background-color: #faf7f2;
+  line-height: 1.6;
+}
+
+/* ===== Шапка ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #1f3b4d;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav a {
+  color: #cfd8dc;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #e8b84b;
+}
+
+/* ===== Главный баннер ===== */
+.hero {
+  text-align: center;
+  padding: 110px 20px;
+  background: linear-gradient(135deg, #1f3b4d, #2e5a75);
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 46px;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 19px;
+  color: #cfd8dc;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 34px;
+  background-color: #e8b84b;
+  color: #1f3b4d;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Преимущества ===== */
+.features {
+  max-width: 1000px;
+  margin: 70px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.features h2 {
+  color: #1f3b4d;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  /* появление при прокрутке (управляется из JS) */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  color: #1f3b4d;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 15px;
+  color: #555;
+}
+
+/* ===== Ссылки на разделы ===== */
+.sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto 70px;
+  padding: 0 20px;
+}
+
+.section-link {
+  display: block;
+  padding: 30px;
+  background-color: #1f3b4d;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.section-link:hover {
+  background-color: #2e5a75;
+  transform: translateY(-4px);
+}
+
+.section-link h3 {
+  color: #e8b84b;
+  margin-bottom: 6px;
+}
+
+.section-link p {
+  color: #cfd8dc;
+  font-size: 15px;
+}
+
+/* ===== Подвал ===== */
+.footer {
+  text-align: center;
+  padding: 25px;
+  background-color: #162a38;
+  color: #90a4ae;
+  font-size: 14px;
+}
+
+/* ===== Мобильная версия ===== */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .nav a {
+    margin: 0 10px;
+  }
+
+  .hero {
+    padding: 70px 20px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+}
